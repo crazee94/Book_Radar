@@ -7,7 +7,8 @@ class Form {
       this.greeting = createElement('h2');
       this.title = createElement('h2');
       this.greeting1 = createElement('h2');
-      
+      this.greeting2 = createElement('h2');
+
     }
 
     hide(){
@@ -48,6 +49,32 @@ class Form {
             this.save.hide();
             this.greeting1.html("Record Added");
             this.greeting1.position(540,100);
+            this.add = createButton('+');
+            
+            this.add.position(600,100);
+
+
+            this.add.mousePressed(()=>{
+              
+              this.book = createInput("BOOK");
+              this.book.position(550, 80);
+            
+              this.add.hide();
+              this.greeting1.hide();
+
+              this.save1 = createButton('SAVE');
+              this.save1.position(550, 350);
+
+              this.save1.mousePressed(()=>{
+              this.greeting2.html("Record Saved");
+              this.greeting2.position(540,100);
+              this.book.hide();
+              this.save1.hide();
+
+              });
+
+            });
+
           });
 
         });
